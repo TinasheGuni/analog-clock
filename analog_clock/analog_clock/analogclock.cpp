@@ -9,21 +9,15 @@
 
 AnalogClock::AnalogClock(QWidget *parent)
     : QWidget{parent},
-    timer(new QTimer(this)), txtInput(new QTextEdit(this))
+    timer(new QTimer(this))
 {
-    // setupGUI();
-
     setWindowTitle("Analog Clock");
+    resize(400, 400);
 
     connect(timer, &QTimer::timeout, this, &AnalogClock::update);
     timer->start(1000);
 }
 
-void AnalogClock::setupGUI()
-{
-    // QVBoxLayout *layout = new QVBoxLayout(this);
-    // layout->addWidget(txtInput);
-}
 
 void AnalogClock::paintEvent(QPaintEvent *event)
 {
@@ -91,10 +85,6 @@ void AnalogClock::paintEvent(QPaintEvent *event)
     painter.restore();
 }
 
-void AnalogClock::processInput()
-{
-
-}
 
 void AnalogClock::update()
 {

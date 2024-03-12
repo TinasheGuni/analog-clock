@@ -19,12 +19,10 @@ public:
     void paintEvent(QPaintEvent *event);
 
 public slots:
-    void processInput();
     void update();
 
 private:
     QTimer *timer;
-    QTextEdit *txtInput;
 };
 
 #endif // ANALOGCLOCK_H
